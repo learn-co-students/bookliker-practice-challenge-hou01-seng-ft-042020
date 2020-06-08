@@ -69,27 +69,4 @@ function createBook(book){
     divShow.append(h2Title, pDesc, imgBook, usersBook, btnFovor)
 
   })
-
-  // const options = {
-  //   method: "POST",
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //     'Accept': 'application/json'
-  //   },
-  //   body: JSON.stringify({
-  //     title: book.title,
-  //     description: book.description,
-  //     img_url: book.img_url,
-  //     users: book.users
-  //   })
-  // }
-
-  // fetch(url, options)
-  // .then(res => res.json())
-  // .then(updatedBook =>{
-  //   createBook(book)
-  // })
-
 }
-  
-  
