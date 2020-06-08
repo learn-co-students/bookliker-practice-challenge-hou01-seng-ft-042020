@@ -20,7 +20,8 @@ function createBook(book){
   liBook.append(h3Title)
   ulList.append(liBook)
 
-  liBook.addEventListener('click', () => {
+  liBook.addEventListener('click', (e) => {
+    e.preventDefault();
 
     divShow.innerHTML = ''
 
@@ -54,19 +55,14 @@ function createBook(book){
         })
       }
 
-      fetch(url, options)
+      fetch(`http://localhost:3000/books/${book.id}`, options)
       .then(res => res.json())
-      .then(json => {
-
-  
-      })
-
+      .then(json => createBook(json))
     })
 
     for(let user of book.users){
       let userBook = document.createElement('li')
       userBook.innerText = `${user["username"]}`      
-      console.log(user)
       usersBook.append(userBook)
     }
     
