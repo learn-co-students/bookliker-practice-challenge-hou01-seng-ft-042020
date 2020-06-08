@@ -38,8 +38,16 @@ function createBook(book){
 
     btnFovor.addEventListener('click',() => {
       user = {"id":1, "username":"pouros"}
-      book.users.push(user)
-
+      let usersArray = []
+      usersArray = book.users
+      function checkUser(user){
+        // console.log(user)
+        user.id === 1
+      }
+      // usersArray.find(checkUser) === 1 ? alert("You read this already!") : book.users.push(user)
+      // usersArray.some(typeof user != "undefined") ? alert("You read this already!") : book.users.push(user)
+      usersArray.some(checkUser) ? alert("You read this already!") : book.users.push(user)
+      
       let userBook = document.createElement('li')
       userBook.innerText = `${user["username"]}`      
       usersBook.append(userBook)
