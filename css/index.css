@@ -2,3 +2,9 @@ body {
 	display: grid;
 	grid-template-columns: 2fr 8fr
 }
+
+.username-list {
+	list-style: none;
+	font-weight: bold;
+	list-style-position: outside;
+}
