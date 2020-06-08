@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener("DOMContentLoaded", function() {
 
 const url = 'http://localhost:3000/books';
 fetch(url)
@@ -8,7 +8,8 @@ fetch(url)
       addBookToDOM(book);
     }
   })
-});
+// }
+// );
 
 function addBookToDOM(bookObj) {
     const arrayOfUsers =  bookObj.users
@@ -48,13 +49,12 @@ function addBookToDOM(bookObj) {
         fetch(usersUrl, options) //pull up & ordering
           .then(res => res.json()) // cashier ringing order up (anything interim - something but not edible)
           .then(book => { //being served
-            for (const bookUser of arrayOfUsers){
-
+            
                 const usernameLi = document.createElement('li')
                 usernameLi.textContent = `${bookUser.username}`
             
                 usersList.append(usernameLi)
-               } //eat it
+                //eat it
             //   debugger
 
           });
