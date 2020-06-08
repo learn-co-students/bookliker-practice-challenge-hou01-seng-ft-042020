@@ -37,21 +37,28 @@ function createBook(book){
     btnFovor.innerText = 'Add Favor User'
 
     btnFovor.addEventListener('click',() => {
-      user = {"id":1, "username":"pouros"}
       let usersArray = []
+      user = {"id":1, "username":"pouros"}
       usersArray = book.users
-      function checkUser(user){
-        // console.log(user)
-        user.id === 1
-      }
-      // usersArray.find(checkUser) === 1 ? alert("You read this already!") : book.users.push(user)
-      // usersArray.some(typeof user != "undefined") ? alert("You read this already!") : book.users.push(user)
-      usersArray.some(checkUser) ? alert("You read this already!") : book.users.push(user)
-      
+      // function checkUser(user){
+        //   // console.log(user)
+        //   user.id === 1
+        // }
+        console.log(usersArray)
+        // usersArray.find(checkUser) === 1 ? alert("You read this already!") : book.users.push(user)
+        // usersArray.some(typeof user != "undefined") ? alert("You read this already!") : book.users.push(user)
+        // usersArray.some(checkUser) ? alert("You read this already!") : book.users.push(user)
+        if(usersArray.find(user => user.id === 1)){
+          alert("You read this already!")
+          return
+        } else {
+          book.users.push(user)
+        }
+
       let userBook = document.createElement('li')
       userBook.innerText = `${user["username"]}`      
       usersBook.append(userBook)
-
+      
       const options = {
         method: "PATCH",
         headers: {
